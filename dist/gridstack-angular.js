@@ -90,7 +90,9 @@ app.directive('gridstack', ['$timeout', function($timeout) {
           scope.onResizeStop({event: e, ui: ui});
         });
       });
-
+      element.on('$destroy', function(e, ui) {
+        gridstack.destroy();
+      });
     }
   };
 
