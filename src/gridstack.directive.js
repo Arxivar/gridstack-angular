@@ -54,8 +54,8 @@ app.directive('gridstack', ['$timeout', function($timeout) {
         $timeout(function() {
           gridstack.destroy();
         });
-      });	  
-	 }
+      });
+    }
   };
 
 }]);

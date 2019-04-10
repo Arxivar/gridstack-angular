@@ -91,7 +91,9 @@ app.directive('gridstack', ['$timeout', function($timeout) {
         });
       });
       element.on('$destroy', function(e, ui) {
-        gridstack.destroy();
+        $timeout(function() {
+          gridstack.destroy();
+        });
       });
     }
   };
