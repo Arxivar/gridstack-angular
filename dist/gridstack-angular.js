@@ -2,7 +2,7 @@
  * gridstack-angular - Angular Gridstack.js directive
  * @version v0.6.0-dev
  * @author Kevin Dietrich
- * @link https://github.com/kdietrich/gridstack-angular#readme
+ * @link https://github.com/Arxivar/gridstack-angular#readme
  * @license MIT
  */
 (function() {
