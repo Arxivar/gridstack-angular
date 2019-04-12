@@ -5,39 +5,43 @@
  * @link https://github.com/Arxivar/gridstack-angular#readme
  * @license MIT
  */
-(function() {
-'use strict';
+(function () {
+  'use strict';
 
-angular.module('gridstack-angular', []);
+  angular.module('gridstack-angular', []);
 
-var app = angular.module('gridstack-angular');
+  var app = angular.module('gridstack-angular');
 
-app.controller('GridstackController', ['$scope', function($scope) {
-  var self = this;
+  app.controller('GridstackController', ['$scope', function ($scope) {
+    var self = this;
 
-  this.init = function(element, options) {
-    self.gridstackHandler = element.gridstack(options).data('gridstack');
-    return self.gridstackHandler;
-  };
 
-  this.removeItem = function(element) {
-    if(self.gridstackHandler) {
-      return self.gridstackHandler.removeWidget(element, false);
-    }
-    return null;
-  };
+    this.init = function (element, options) {
+      self.gridstackHandler = element.gridstack(options).data('gridstack');
+      return self.gridstackHandler;
+    };
 
-  this.addItem = function(element) {
-    if(self.gridstackHandler) {
-      self.gridstackHandler.makeWidget(element);
-      return element;
-    }
-    return null;
-  };
+    this.removeItem = function (element) {
+      if (self.gridstackHandler) {
+        return self.gridstackHandler.removeWidget(element, false);
+      }
+      return null;
+    };
 
-}]);
+    this.addItem = function (element) {
+      if (self.gridstackHandler) {
+        self.gridstackHandler.makeWidget(element);
+        return element;
+      }
+      return null;
+    };
+
+    this.$onDestroy = function () {
+      self.gridstackHandler.destroy();
+    };
+
+  }]);
 })();
-
 (function () {
   'use strict';
 
@@ -104,12 +108,6 @@ app.controller('GridstackController', ['$scope', function($scope) {
             });
           });
         });
-        element.on('$destroy', function (e, ui) {
-          $timeout(function () {
-            gridstack.destroy();
-          });
-        });
-
       }
     };
 
@@ -183,13 +181,13 @@ app.controller('GridstackController', ['$scope', function($scope) {
 
         scope.$watch('gsItemResizable', function () {
           gridstackController.gridstackHandler.resizable(element, scope.gsItemResizable);
-        })
+        });
         scope.$watch('gsItemMovable', function () {
           gridstackController.gridstackHandler.movable(element, scope.gsItemMovable);
-        })
+        });
         scope.$watch('gsItemLocked', function () {
           gridstackController.gridstackHandler.locked(element, scope.gsItemLocked);
-        })
+        });
 
         // Update scope after gridstack attributes change
         scope.$watch(function () {

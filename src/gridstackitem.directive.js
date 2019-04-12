@@ -66,13 +66,13 @@
 
         scope.$watch('gsItemResizable', function () {
           gridstackController.gridstackHandler.resizable(element, scope.gsItemResizable);
-        })
+        });
         scope.$watch('gsItemMovable', function () {
           gridstackController.gridstackHandler.movable(element, scope.gsItemMovable);
-        })
+        });
         scope.$watch('gsItemLocked', function () {
           gridstackController.gridstackHandler.locked(element, scope.gsItemLocked);
-        })
+        });
 
         // Update scope after gridstack attributes change
         scope.$watch(function () {

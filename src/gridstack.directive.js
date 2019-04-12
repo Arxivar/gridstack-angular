@@ -64,12 +64,6 @@
             });
           });
         });
-        element.on('$destroy', function (e, ui) {
-          $timeout(function () {
-            gridstack.destroy();
-          });
-        });
-
       }
     };
 
