@@ -4,7 +4,7 @@
   "description": "Angular Gridstack.js directive",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kdietrich/gridstack-angular.git"
+    "url": "git+https://github.com/Arxivar/gridstack-angular.git"
   },
   "devDependencies": {
     "gulp": "~3.9.0",
@@ -18,9 +18,9 @@
   "author": "Kevin Dietrich",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kdietrich/gridstack-angular/issues"
+    "url": "https://github.com/Arxivar/gridstack-angular/issues"
   },
-  "homepage": "https://github.com/kdietrich/gridstack-angular#readme",
+  "homepage": "https://github.com/Arxivar/gridstack-angular#readme",
   "dependencies": {
     "gulp-jscs": "^4.0.0"
   }
